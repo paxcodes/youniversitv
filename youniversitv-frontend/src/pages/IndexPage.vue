@@ -1,4 +1,5 @@
 <template>
+  <h1>{{ api }}</h1>
   <q-page class="row items-center justify-evenly">
     <iframe
       width="560"
@@ -22,7 +23,10 @@ export default defineComponent({
     const mainVideo = ref<string>(
       `https://youtube.com/embed/${videos.value[0]}`
     );
-    return { videos, mainVideo };
+
+    // const beforeMounted =
+    const api = ref<string>(this.$api.baseURL);
+    return { videos, mainVideo, api };
   },
   methods: {},
 });
